@@ -1,37 +1,42 @@
 <style type='text/css'>
+	/* Style the chat button */
 	.embeddedServiceHelpButton .helpButton .uiButton {
-		background-color: #bf9b81;
-		font-family: "Arial", sans-serif;
+		background-color: #FF9900 !important; /* Orange color */
+		border-radius: 50% !important;       /* Make it circular */
+		width: 60px !important;             /* Adjust size */
+		height: 60px !important;            /* Adjust size */
+		background-image: url('https://path-to-your-icon/chat-icon.png') !important; /* Custom chat icon */
+		background-size: 50% !important;    /* Icon size */
+		background-position: center !important;
+		background-repeat: no-repeat !important;
+		box-shadow: none !important;        /* Remove box shadow */
+		border: none !important;            /* Remove border */
 	}
+
+	/* Focus state */
 	.embeddedServiceHelpButton .helpButton .uiButton:focus {
-		outline: 1px solid #bf9b81;
+		outline: 2px solid #FF7700 !important; /* Darker orange for focus */
+	}
+
+	/* Hover state */
+	.embeddedServiceHelpButton .helpButton .uiButton:hover {
+		background-color: #FF7700 !important; /* Slightly darker orange on hover */
 	}
 </style>
 
+<!-- Embed the chat button -->
 <img src="https://exemplis--partial--c.sandbox.vf.force.com/resource/1731444469000/LogoAlbanyPark?" width="250" height="100">
 <h1>Welcome to Our Support Chat</h1>
-    <p>If you need assistance, click the chat button below to connect with one of our agents.</p>
+<p>If you need assistance, click the chat button below to connect with one of our agents.</p>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
-		embedded_svc.settings.displayHelpButton = true; //Or false
-		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+		embedded_svc.settings.displayHelpButton = true;
+		embedded_svc.settings.language = '';
 
-		embedded_svc.settings.defaultMinimizedText = 'Chat now'; //(Defaults to Chat with an Expert)
-		//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
-
-		//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
-		//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
-
-		// Settings for Chat
-		//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
-			// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
-			// Returns a valid button ID.
-		//};
-		//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
-		//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
-		embedded_svc.settings.offlineSupportMinimizedText = 'Leave a Message'; //(Defaults to Contact Us)
+		embedded_svc.settings.defaultMinimizedText = 'Chat now';
+		embedded_svc.settings.offlineSupportMinimizedText = 'Leave a Message';
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
